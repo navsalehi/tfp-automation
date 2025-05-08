@@ -8,9 +8,7 @@ TERRAFORM_VERSION="${TERRAFORM_VERSION:-}"
 RKE_PROVIDER_VERSION="${RKE_PROVIDER_VERSION:-}"
 RANCHER2_PROVIDER_VERSION="${RANCHER2_PROVIDER_VERSION:-}"
 LOCALS_PROVIDER_VERSION="${LOCALS_PROVIDER_VERSION:-}"
-AWS_PROVIDER_VERSION="${AWS_PROVIDER_VERSION:-}"
-LINODE_PROVIDER_VERSION="${LINODE_PROVIDER_VERSION:-}"
-HARVESTER_PROVIDER_VERSION="${HARVESTER_PROVIDER_VERSION:-}"
+CLOUD_PROVIDER_VERSION="${CLOUD_PROVIDER_VERSION:-}"
 KUBERNETES_PROVIDER_VERSION="${KUBERNETES_PROVIDER_VERSION:-}"
 
 TRIM_JOB_NAME=$(basename "$JOB_NAME")
@@ -27,9 +25,7 @@ while [[ 3 -gt $count ]]; do
                                                                     --build-arg RKE_PROVIDER_VERSION="$RKE_PROVIDER_VERSION" \
                                                                     --build-arg RANCHER2_PROVIDER_VERSION="$RANCHER2_PROVIDER_VERSION" \
                                                                     --build-arg LOCALS_PROVIDER_VERSION="$LOCALS_PROVIDER_VERSION" \
-                                                                    --build-arg AWS_PROVIDER_VERSION="$AWS_PROVIDER_VERSION" \
-                                                                    --build-arg LINODE_PROVIDER_VERSION="$LINODE_PROVIDER_VERSION" \
-                                                                    --build-arg HARVESTER_PROVIDER_VERSION="$HARVESTER_PROVIDER_VERSION" \
+                                                                    --build-arg CLOUD_PROVIDER_VERSION="$CLOUD_PROVIDER_VERSION" \
                                                                     --build-arg KUBERNETES_PROVIDER_VERSION="$KUBERNETES_PROVIDER_VERSION" \
                                                                     -t tfp-automation-validation-"${TRIM_JOB_NAME}""${BUILD_NUMBER}"
 
